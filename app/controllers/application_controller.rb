@@ -102,4 +102,15 @@ class ApplicationController < ActionController::Base
     render({ :plain => answer.to_json })
   end
 
+  def insert_director
+    cb = Director.count
+    r = Director.new
+    r.name = params.fetch(:input_name,nil)
+    r.save
+    ca = Director.count
+    answer = {:count_before => cb, :count_after => ca, :added_record => r}
+
+    render({ :plain => answer.to_json })
+  end
+
 end

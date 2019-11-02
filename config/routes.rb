@@ -21,7 +21,11 @@ Rails.application.routes.draw do
   match("/delete_actor/:id", { :controller => "application", :action => "delete_actor", :via => "get" })
   match("/delete_character/:id", { :controller => "application", :action => "delete_character", :via => "get" })
 
-
+  #Create
+  match("/insert_director_record", { :controller => "application", :action => "insert_director", :via => "get" })
+  match("/insert_movie_record", { :controller => "application", :action => "insert_movie", :via => "get" })
+  match("/insert_actor_record", { :controller => "application", :action => "insert_actor", :via => "get" })
+  match("/insert_character_record", { :controller => "application", :action => "insert_character", :via => "get" })
 
 
   # ================================================
